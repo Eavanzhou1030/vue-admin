@@ -6,6 +6,8 @@ import 'normalize.css/normalize.css'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+import './style/index.scss';
+
 import i18n from './lang'
 
 Vue.config.productionTip = false
