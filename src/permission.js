@@ -5,11 +5,10 @@ import nprogress from 'nprogress'
 import 'nprogress/nprogress.css'
 import {getToken} from '@/utils/auth'
 
-function hasPermission(roles, routes) {
-  if(routes.meta && routes.meta.roles) {
-    return roles.some(role => routes.meta.roles.includes(role))
-  }
-  return true
+function hasPermission(roles, permissionRoutes) {
+  if(roles.includes('admin')) return true
+  if(!permissionRoutes) return true
+  return roles.some(role => permissionRoutes.includes(role))
 }
 
 const whiteList = ['/login', '/authorized']
@@ -20,10 +19,10 @@ router.beforeEach((to, from, next) => {
     if(to.path === '/login') {
       next({ path: '/' })
       nprogress.done()
+    } else {
+      console.log('拉取用户数据')
     } 
-    // else if () {
-      // 
-    // }
+    
   } else {
     if(whiteList.includes(to.path)) {
       next()
