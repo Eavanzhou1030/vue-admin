@@ -20,9 +20,8 @@ router.beforeEach((to, from, next) => {
       next({ path: '/' })
       nprogress.done()
     } else {
-      console.log('拉取用户数据')
-    } 
-    
+      // console.log('拉取用户数据');
+    }
   } else {
     if(whiteList.includes(to.path)) {
       next()
@@ -33,6 +32,6 @@ router.beforeEach((to, from, next) => {
   }
 });
 
-router.afterEach((to, from, next) => {
+router.afterEach(() => {
   nprogress.done()
 })
