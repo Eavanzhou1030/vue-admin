@@ -14,6 +14,7 @@ import i18n from './lang'
 Vue.config.productionTip = false
 
 console.log('测试git merge')
+console.log('再次测试git merge')
 
 Vue.use(Element, {
   i18n: (key, value) => i18n.t(key, value)
