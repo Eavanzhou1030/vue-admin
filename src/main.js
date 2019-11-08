@@ -8,6 +8,7 @@ import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
 import './style/index.scss';
+import './icons';
 
 import i18n from './lang'
 
